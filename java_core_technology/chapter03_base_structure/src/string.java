@@ -44,5 +44,8 @@ public class string {
         builder.append(" hello"); // 追加一个字符串
         String completedString = builder.toString(); // 输出字符序列
         System.out.println("通过builder构建的字符串：" + completedString);
+        
+        // 显式将字符串初始化为null
+        String ttt = null;
     }
 }
