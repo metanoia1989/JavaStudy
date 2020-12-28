@@ -1,7 +1,8 @@
+import java.io.Serializable;
 import java.util.Date;
 import java.util.GregorianCalendar;
 
-public class Employee implements Comparable<Employee>, Cloneable
+public class Employee implements Comparable<Employee>, Cloneable, Serializable
 {
     private String name; 
     private double salary;
