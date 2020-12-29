@@ -30,6 +30,5 @@ public class object_stream_test {
         } catch (Exception e) {
             e.printStackTrace();
         }
-
     } 
 }
