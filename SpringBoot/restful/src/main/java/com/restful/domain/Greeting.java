@@ -1,4 +1,4 @@
-package com.restful.restservice;
+package com.restful.domain;
 
 public class Greeting {
     private final long id;    

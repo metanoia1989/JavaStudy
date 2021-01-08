@@ -1,0 +1,27 @@
+
+server:
+    port: 8811
+    
+spring:
+    application:
+        name: restful
+        
+book:
+    name: SpringCloudInAction
+    author: ZhaiYongchao
+    desc: ${book.author} is writing 《${book.name}》
+    
+swagger:
+    title: spring-boot-starter-swagger
+    description: Starter for swagger 2.x
+    version: 1.4.0.RELEASE
+    license: Apache License, Version 2.0
+    license-url: https://www.apache.org/licenses/LICENSE-2.0.html
+    terms-of-service-url: https://github.com/dyc87112/spring-boot-starter-swagger
+    contact:
+        name: Adam Smith
+        url: https://blog.metanoia1989.com
+        email: sogaxili@gmail.com
+    base-package: com.restful 
+    base-path:
+        - /**
