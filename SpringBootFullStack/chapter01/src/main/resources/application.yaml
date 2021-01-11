@@ -1,0 +1,34 @@
+
+# tomcat 配置
+server:
+    port: 8081
+    error:
+        path: /error
+    servlet:
+        session:
+            timeout: 30m
+        context-path: /
+    tomcat:
+        uri-encoding: utf-8
+        max-threads: 500
+        
+        
+# 自定义属性
+book:
+    name: 三国演义
+    author: 罗贯中
+    price: 30
+    
+my:
+    name: Adam Smith
+    address: China
+    favorites: 足球:徒步:Coding
+
+another:
+    users:
+        - name: Adam Smith
+          address: China
+          favorites: 足球:徒步:Coding
+        - name: sang
+          address: GZ
+          favorites: 阅读:吉他
