@@ -1,0 +1,13 @@
+spring:
+    mvc:
+        static-path-pattern: /**
+    web:
+        resources:
+            static-locations:
+                - classpath:/META-INF/resources/
+                - classpath:/static
+                - classpath:/resources/
+                - file:${upload-path}
+
+upload-path: E:/Upload/ 
+
