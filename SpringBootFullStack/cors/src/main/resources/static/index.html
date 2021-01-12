@@ -12,5 +12,27 @@
         <input type="button" value="删除数据" onclick="deleteData()"><br>
     </div>
     <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.5.1/jquery.js"></script> 
+    <script>
+        function deleteData() {
+             $.ajax({
+                 url: 'http://localhost:8080/book/99',
+                 type: 'delete',
+                 success: (msg) => {
+                     $('#deleteResult').html(msg);
+                 }
+             })
+        }
+
+        function getData() {
+            $.ajax({
+                url: 'http://localhost:8080/book/',
+                type: 'post',
+                data: { name: '三国演义' },
+                success: (msg) => {
+                    $('#contentDiv').html(msg); 
+                }
+            }); 
+        }
+    </script>
 </body>
 </html>

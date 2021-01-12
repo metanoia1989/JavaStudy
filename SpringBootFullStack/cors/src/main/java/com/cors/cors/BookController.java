@@ -11,13 +11,13 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/book")
 public class BookController {
     @PostMapping("/")
-    @CrossOrigin(value = "http://localhost:8080", maxAge = 1800, allowedHeaders = "*")
+    @CrossOrigin(value = "*", maxAge = 1800, allowedHeaders = "*")
     public String addBookString(String name) {
         return "receive:" + name; 
     }
     
     @DeleteMapping("/{id}")
     public String deleteBookById(@PathVariable Long id) {
-        return String.valueOf(id); 
+        return String.valueOf(id);   
     }
 }
