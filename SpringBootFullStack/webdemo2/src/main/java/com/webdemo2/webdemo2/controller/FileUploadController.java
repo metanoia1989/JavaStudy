@@ -22,9 +22,9 @@ public class FileUploadController {
     
     @PostMapping("/upload")
     public String upload(MultipartFile uploadFile, HttpServletRequest request) {
-        String realPath = request.getSession().getServletContext().getRealPath("/uploadFile/");     
+        // String realPath = request.getSession().getServletContext().getRealPath("/uploadFile/");     
         String format = sdf.format(new Date());
-        File folder = new File(realPath + format);
+        File folder = new File(uploadPath + "uploadFile/" + format);
         if (!folder.isDirectory()) {
             folder.mkdirs();
         }
@@ -34,7 +34,7 @@ public class FileUploadController {
         try {
             uploadFile.transferTo(new File(folder, newName));
             String filePath = request.getScheme() + "://" + request.getServerName() + ":"
-                    + request.getServerPort() + "/uploadFile/" + format + newName;
+                    + request.getServerPort() +  "/uploadFile/" + format + "/" + newName;
             return filePath + "," + folder;
         } catch (Exception e) {
             e.printStackTrace();
