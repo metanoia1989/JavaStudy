@@ -8,6 +8,38 @@ spring:
                 - classpath:/static
                 - classpath:/resources/
                 - file:${upload-path}
+    
+    servlet:
+        multipart:
+            # 是否开启文件上传支持
+            enabled: true
+            # 文件写入磁盘的阈值
+            file-size-threshold: 0
+            # 上传文件的临时保存位置
+            location: E:/temp
+            # 上传的单个文件的最大大小
+            max-file-size: 1MB
+            # 上传时文件的总大小
+            max-request-size: 10MB
+            # 文件是否延迟解析
+            resolve-lazily: false
+            
+    thymeleaf:
+        # 是否开启缓存
+        cache: true
+        # 检查模板是否存在
+        check-template-location: true
+        # 模板文件编码
+        encoding: utf-8
+        # 模板文件位置
+        prefix: classpath:/templates/
+        # Content-Type配置
+        servlet:
+            content-type: text/html
+        # 模板文件后缀
+        suffix: .html            
+
+         
 
 upload-path: E:/Upload/ 
 

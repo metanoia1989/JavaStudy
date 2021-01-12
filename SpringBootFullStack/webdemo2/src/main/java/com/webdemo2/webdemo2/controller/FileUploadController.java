@@ -2,6 +2,7 @@ package com.webdemo2.webdemo2.controller;
 
 import java.io.File;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.UUID;
 
@@ -9,6 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -40,5 +42,29 @@ public class FileUploadController {
             e.printStackTrace();
         }
         return "上传失败!";
+    }
+
+    @PostMapping("/uploads")
+    public ArrayList<String> uploads(@RequestParam("uploadFile") MultipartFile[] uploadFiles, HttpServletRequest request) {
+        ArrayList<String> results = new ArrayList<String>();
+        for (MultipartFile uploadFile : uploadFiles) {
+            String format = sdf.format(new Date());
+            File folder = new File(uploadPath + "uploadFile/" + format);
+            if (!folder.isDirectory()) {
+                folder.mkdirs();
+            }
+            String oldName = uploadFile.getOriginalFilename();
+            String newName = UUID.randomUUID().toString() + oldName.substring(
+                oldName.lastIndexOf(".", oldName.length()));
+            try {
+                uploadFile.transferTo(new File(folder, newName));
+                String filePath = request.getScheme() + "://" + request.getServerName() + ":"
+                        + request.getServerPort() +  "/uploadFile/" + format + "/" + newName;
+                results.add(filePath);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+        return results;
     }
 }
