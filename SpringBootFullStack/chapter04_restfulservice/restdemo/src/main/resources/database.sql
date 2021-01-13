@@ -2,6 +2,7 @@
 
 CREATE DATABASE `jparestful` DEFAULT CHARACTER SET utf8;
 
+use `jparestful`;
 
 --- 插入数据
 INSERT INTO `t_book` (`author`, `name`) VALUES

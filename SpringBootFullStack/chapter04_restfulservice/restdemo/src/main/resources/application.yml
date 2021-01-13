@@ -13,3 +13,31 @@ spring:
         properties:
             hibernate:
                 dialect: org.hibernate.dialect.MySQL57Dialect
+
+    data:
+        rest:
+            # 每页记录数目，默认20
+            default-page-size: 2
+            # 分页查询页码参数名，默认为page
+            page-param-name: page
+            # 分页查询记录数参数名，默认为size
+            limit-param-name: size
+            # 分页查询排序参数名，默认为sort
+            sort-param-name: sort
+            # base-path 表示给所有请求路径都加上前缀
+            base-path: /api
+            # 添加成功时是否返回添加内容
+            return-body-on-create: true
+            # 更新成功时是否返回更新内容
+            return-body-on-update: true
+            
+    devtools:
+        restart:
+            # 重新定义不触发重启的目录
+            exclude: static/**
+            # 添加额外要监控的目录
+            additional-paths: src/main/resources/static
+            # 添加触发文件，只有项目和触发文件都更改时，才重启项目
+            # trigger-file: .trigger-file    # 放在 resources 目录下   
+            # 禁用自动重启
+            # enabled: false
