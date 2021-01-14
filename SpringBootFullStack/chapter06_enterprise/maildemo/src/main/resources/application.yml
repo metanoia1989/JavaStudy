@@ -1,0 +1,17 @@
+spring:
+    profiles:
+        active: dev
+        
+    # 邮箱配置
+    mail:
+        host: smtp.163.com
+        port: 465
+        username: ##邮箱账号##
+        password: ##授权码##
+        default-encoding: UTF-8
+        properties:
+            mail:
+                smtp:
+                    socketFactory:
+                        class: javax.net.ssl.SSLSocketFactory
+                debug: true 
