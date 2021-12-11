@@ -9,5 +9,5 @@
 
 
 其中 Java核心技术的源码		
-CoreJava 源码练习 https://github.com/mthli/Java			
-CoreJavaBook http://copland.udel.edu/~caviness/Class/CISC370-00S/CoreJavaBook/		
+* CoreJava 源码练习 https://github.com/mthli/Java			
+* CoreJavaBook http://copland.udel.edu/~caviness/Class/CISC370-00S/CoreJavaBook/		
